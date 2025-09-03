@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <style>
+      .dark { fill: #002452; }
+      .light { fill: #70BF41; }
+    </style>
+  </defs>
+
+  <rect class="dark" x="0" y="0" width="200" height="200"/>
+  <polygon class="light" points="200 0 200 200 0 200 200 0"/>
+
+</svg>
