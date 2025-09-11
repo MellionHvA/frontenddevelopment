@@ -10,6 +10,7 @@
 
 
 
+
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
@@ -30,6 +31,11 @@
 body {
 	margin: 0;
 	background-color: black;
+}
+
+header {
+    --icon-size: 28px;
+    --icon-stroke: 2;
 }
 
 nav {
@@ -56,7 +62,10 @@ nav img {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-51%, -40%);
+  width: 100%;
+  height: auto;
+  max-width: 500px;
 }
 
 nav > ul:last-child {
@@ -69,9 +78,99 @@ nav > ul:last-child {
 
 nav a {
   color: white;
-  font-size: 1.38em;
+  font-size: 1.3rem;
   text-decoration: none;
-  font-family: 'Indikator', sans-serif;
+  font-weight: 400;
+  font-family: Helvetica, sans-serif;
   text-transform: uppercase;
 }
 
+nav > ul:first-child svg {
+  height: var(--icon-size);
+  width: var(--icon-size);
+  stroke-width: var(--icon-stroke);
+  margin-right: 0.5em;
+  line-height: 0;
+}
+
+nav > ul:last-child svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 3px;
+    top: 50%;
+    transform: scale(.6);
+}
+
+nav svg {
+	fill: none;
+	stroke: currentColor;
+	stroke-miterlimit: 10;
+}
+
+
+h2 {
+  color: white;
+  font-family: Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 3.3rem;
+  text-align: center;
+  margin-top: 4.5%;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+}
+
+/* CODE SVG VAN SHOP.BMTHOFFICIAL.COM */
+#Umbrella {
+display: flex;
+width: 100%;
+max-width: 440px;
+margin: auto;
+padding-top: 1.5%;
+display: block;
+}
+
+#Raindrops path {
+  animation: fall 2.5s ease-in infinite;
+}
+
+.drop-one {
+  animation-delay: 0s;
+}
+.drop-two {
+  animation-delay: 0.5s !important;
+}
+.drop-three {
+  animation-delay: 0s !important;
+}
+.drop-four {
+  animation-delay: 0.75s !important;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 990px) {
+  nav img {
+    max-width: 50%; 
+    transform: translate(-50%, -50%);
+  }
+
+  nav > ul:last-child {
+    display: none;
+  }
+
+  nav > ul:last-child li {
+    font-size: 1rem;
+  }
+}
