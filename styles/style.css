@@ -160,7 +160,7 @@ display: block;
 }
 
 /* --- RESPONSIVE --- */
-@media (max-width: 990px) {
+@media (width < 62rem) {
   nav img {
     max-width: 50%; 
     transform: translate(-50%, -50%);
