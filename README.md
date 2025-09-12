@@ -97,7 +97,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   samen met je groepje opstellen
 
   Bespreken met groepje:
-  HTML bekijken, video embed, site op de beste manier responsive maken
+  HTML bekijken, carousel met pijltjes, video embed, site op de beste manier responsive maken, hoe een kaart op een website bruikbaar maken
 
 
   ### Verslag van meeting
