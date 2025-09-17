@@ -16,8 +16,8 @@
 /*********************/
 :root {
 	/* startje */
-	--color-text:#111;
-	--color-background:#eee;
+	--color-text:white;
+	--color-background:black;
 }
 
 
@@ -30,7 +30,7 @@
 
 body {
 	margin: 0;
-	background-color: black;
+  background-color: var(--color-background);
 }
 
 header {
