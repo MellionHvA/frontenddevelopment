@@ -15,7 +15,6 @@
 /* CUSTOM PROPERTIES */
 /*********************/
 :root {
-	/* startje */
 	--color-text:white;
 	--color-background:black;
 }
@@ -31,49 +30,24 @@
 body {
 	margin: 0;
   background-color: var(--color-background);
+  color: var(--color-text);
+  text-transform: uppercase;
 }
 
 header {
-    --icon-size: 28px;
-    --icon-stroke: 2;
-}
-
-nav {
-  position: relative;
-  background: black;
-  color: white;
-  padding: 1rem 2rem;
-}
-
-nav > ul:first-child {
   display: flex;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: relative;
+  gap: 1em;
+  font-family: Helvetica, sans-serif;
+  --icon-size: 28px;
+  --icon-stroke: 2;
 }
 
-nav > ul:first-of-type li:first-of-type {
-  margin-right: auto;
+h1 {
+  margin-inline:auto;
 }
 
-nav img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-51%, -40%);
-  width: 100%;
-  height: auto;
-  max-width: 500px;
-}
-
-nav > ul:last-child {
-  display: flex;
-  justify-content: space-around;
-  list-style: none;
-  margin: 30px 0 0 0;
-  padding: 0;
+h1 img {
+  width: clamp( 5em, 40vw, 24.25em );
 }
 
 nav a {
@@ -85,92 +59,71 @@ nav a {
   text-transform: uppercase;
 }
 
-nav > ul:first-child svg {
-  height: var(--icon-size);
-  width: var(--icon-size);
-  stroke-width: var(--icon-stroke);
-  margin-right: 0.5em;
-  line-height: 0;
-}
+/* Zoeken */
 
-nav > ul:last-child svg {
-    width: 20px;
-    height: 20px;
-    stroke-width: 3px;
-    top: 50%;
-    transform: scale(.6);
-}
-
-nav svg {
-	fill: none;
-	stroke: currentColor;
-	stroke-miterlimit: 10;
+button {
+  fill: none;
 }
 
 
-h2 {
-  color: white;
-  font-family: Helvetica, sans-serif;
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: 3.3rem;
-  text-align: center;
-  margin-top: 4.5%;
+button:nth-of-type(1) {
+  order:1;
+  justify-self:start;
+  align-self:center;
 }
 
-@keyframes fall {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100px);
-    opacity: 0;
-  }
+
+/* Hoofdmenu */
+button:nth-of-type(2) {
+  order:-1;
 }
 
-/* CODE SVG VAN SHOP.BMTHOFFICIAL.COM */
-#Umbrella {
-display: flex;
-width: 100%;
-max-width: 440px;
-margin: auto;
-padding-top: 1.5%;
-display: block;
+nav:nth-of-type(1) {
+  position: fixed;
+  inset:0;
+  background-color: red;
+  translate: -100%;;
 }
 
-#Raindrops path {
-  animation: fall 2.5s ease-in infinite;
+nav:nth-of-type(1) ul {
+  list-style: none;
+  margin: 30px 0 0 0;
+  padding: 0;
 }
 
-.drop-one {
-  animation-delay: 0s;
-}
-.drop-two {
-  animation-delay: 0.5s !important;
-}
-.drop-three {
-  animation-delay: 0s !important;
-}
-.drop-four {
-  animation-delay: 0.75s !important;
+/* Service menu */
+nav:nth-of-type(2) {
+  justify-self:end;
+  align-self:center;
+  order:2;
 }
 
-/* --- RESPONSIVE --- */
-@media (width < 62rem) {
-  nav img {
-    max-width: 50%; 
-    transform: translate(-50%, -50%);
+nav:nth-of-type(2) ul {
+  display:flex;
+}
+
+
+
+/* RESPONSIVE BIG SCREEN */
+@media ( width > 62em) {
+  header {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
   }
 
-  nav > ul:last-child {
-    display: none;
+  header {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  }
+  
+  nav:nth-of-type(1) {
+  order: 1;
+  grid-column:span 3;
   }
 
-  nav > ul:last-child li {
-    font-size: 1rem;
+  nav:nth-of-type(1) ul {
+  display:flex;
+  justify-content: space-around;
   }
+
 }
