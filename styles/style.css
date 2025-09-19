@@ -16,7 +16,9 @@
 /*********************/
 :root {
 	--color-text:white;
-	--color-background:black;
+	--color-background: black;
+  --icon-size: 28px;
+  --icon-stroke: 2;
 }
 
 
@@ -32,22 +34,46 @@ body {
   background-color: var(--color-background);
   color: var(--color-text);
   text-transform: uppercase;
+  font-family: 'Segoe UI', Helvetica, sans-serif;
 }
 
 header {
+  background-color: black;
   display: flex;
-  gap: 1em;
-  font-family: Helvetica, sans-serif;
-  --icon-size: 28px;
-  --icon-stroke: 2;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 52px;
+  padding: 0 2em;
+  margin: 0 auto;
+}
+
+li {
+  list-style: none;
+}
+
+svg {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  stroke-width: var(--icon-stroke);
 }
 
 h1 {
-  margin-inline:auto;
+  margin-inline: auto;
 }
 
 h1 img {
-  width: clamp( 5em, 40vw, 24.25em );
+  display: block;
+  margin-left: 2.47em;
+  width: clamp( 5em, 45.6vw, 24.25em);
+}
+
+h2 {
+  font-size: 3em;
+  line-height: .75;
+  font-weight: 400;
+  text-align: center;
+  text-wrap: balance;
 }
 
 nav a {
@@ -55,65 +81,153 @@ nav a {
   font-size: 1.3rem;
   text-decoration: none;
   font-weight: 400;
-  font-family: Helvetica, sans-serif;
   text-transform: uppercase;
 }
 
 /* Zoeken */
-
-button {
-  fill: none;
-}
-
-
 button:nth-of-type(1) {
+  background-color: transparent;
+  color:  white;
+  border: none;
   order:1;
-  justify-self:start;
-  align-self:center;
 }
 
-
-/* Hoofdmenu */
+/* Hamburger menu */
 button:nth-of-type(2) {
   order:-1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: -1.9%;
 }
 
-nav:nth-of-type(1) {
-  position: fixed;
-  inset:0;
-  background-color: red;
-  translate: -100%;;
+button:nth-of-type(2) span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: white;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
+nav:nth-of-type(1) a:hover {
+  background-color: grey;
+}
+
+nav:nth-of-type(1)[data-open] {
+  translate: 0;
+}
+
 
 nav:nth-of-type(1) ul {
-  list-style: none;
   margin: 30px 0 0 0;
   padding: 0;
 }
 
+/* Menu Algemeen */
+nav:nth-of-type(1) {
+  position: fixed;
+  top: 3.2em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 55%;
+  background-color: black;
+  translate: -100%;;
+  transition: translate 0.7s ease;
+}
+
 /* Service menu */
 nav:nth-of-type(2) {
-  justify-self:end;
+  justify-self:flex-end;
   align-self:center;
   order:2;
 }
 
 nav:nth-of-type(2) ul {
+  padding: .18em;
   display:flex;
+  gap: .5em;
+}
+
+button:nth-of-type(2)[data-open] span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+button:nth-of-type(2)[data-open] span:nth-child(2) {
+  opacity: 0;
+}
+
+button:nth-of-type(2)[data-open] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* CODE ANIMATIE DRUPPELS VAN SHOP.BMTHOFFICIAL.COM */
+@keyframes fall {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
 }
 
 
 
+/* CODE UMBRELLA VAN SHOP.BMTHOFFICIAL.COM */
+#Umbrella {
+padding-top: 1.5em;
+width: 100%;
+max-width: 440px;
+height: auto;
+margin: 0 auto;
+display: block
+}
+
+#Raindrops path {
+  animation: fall 2.5s ease-in infinite;
+}
+
+.drop-one {
+  animation-delay: 0s;
+}
+.drop-two {
+  animation-delay: 0.5s !important;
+}
+.drop-three {
+  animation-delay: 0s !important;
+}
+.drop-four {
+  animation-delay: 0.75s !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* RESPONSIVE BIG SCREEN */
-@media ( width > 62em) {
+@media ( width > 46.9em) {
   header {
     display: grid;
     grid-template-columns: 1fr max-content 1fr;
-  }
-
-  header {
-  display: grid;
-  grid-template-columns: 1fr max-content 1fr;
   }
   
   nav:nth-of-type(1) {
@@ -126,4 +240,35 @@ nav:nth-of-type(2) ul {
   justify-content: space-around;
   }
 
+  @media (min-width: 750px) {
+  header {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    height: 60px;
+    padding: 0 2em;
+  }
+
+  button:nth-of-type(2) {
+    display: none;
+  }
+
+  h1 img {
+  max-width: 500px;
+  max-height: 47px;
+}
+
+button:nth-of-type(1) {
+  background-color: transparent;
+  color:  white;
+  border: none;
+  order:-1;
+}
+
+/* Service menu */
+h1 img {
+  justify-items: center;
+  margin: auto;
+}
+
+}
 }
