@@ -268,7 +268,7 @@ display: block
 
 
 /* RESPONSIVE BIG SCREEN */
-@media ( width > 46.9em) {
+@media ( width > 61.9em) {
   header {
     display: grid;
     grid-template-columns: 1fr max-content 1fr;
@@ -328,5 +328,4 @@ h1 img {
 nav a {
   font-size: 1.3rem;
 }
-
 }
