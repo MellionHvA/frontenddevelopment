@@ -114,17 +114,18 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor 2<sup>e</sup> voortgang</summary>
 
   ### Stand van zaken
-  hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
+  Ik heb kunnen werken aan mijn header, ook geleerd hoe ik het op een betere manier kon doen wat mijn uiteindelijk veel tijd zou besparen (2 navs gebruiken i.p.v. 1). Ik was ook eerst begonnen met big screen en niet mobile first dus opnieuw      beginnen was het beste optie, ik ben van plan om z.s.m aan de hamburger menu te werken.
 
 
   ### Agenda voor meeting
   samen met je groepje opstellen
 
-  | student 1      | student 2          | student 3    | student 4        |
-  | ---            | ---                | ---          | ---              |
-  | dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-  | en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-  | ...            | ...                | ...          | ...              |
+  Vragen per leerling:
+  Melih: Html check & hoe je je site responsive maakt 
+  Eva: Video van een site pakken en zelf gebruiken
+  Bo: Vraag of haar html klopt
+  Demi: Vraag of haar html klopt
+  
 
 
   ### Verslag van meeting
