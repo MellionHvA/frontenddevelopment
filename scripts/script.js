@@ -34,3 +34,7 @@ carousels.forEach((carousel) => {
     }
   });
 });
+
+
+
+// class toevoegen op body, en op overflow hidden zetten om lock op slot te zetten 
