@@ -36,8 +36,179 @@ body {
   background-color: var(--color-background);
   color: var(--color-text);
   text-transform: uppercase;
-  font-family: 'Segoe UI', Helvetica, sans-serif;
+  font-family: Segoe UI;
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10rem;
+}
+
+main > a {
+  position: relative;
+  padding: 0.8rem 2rem;
+  color: black;
+  text-decoration: none;
+  margin: 3rem auto;
+  text-align: center;
+  z-index: 1;
+}
+
+main > img:nth-of-type(1),
+main > img:nth-of-type(5) {
+  width: 50%;
+  max-width: 100px;
+  height: auto;
+  display: block;
+  margin-inline: auto;
+  filter: invert(1);
+}
+
+main > img:nth-last-of-type(3),
+main > img:nth-last-of-type(2),
+main > img:nth-last-of-type(1) {
+  width: 632px;
+  margin: 1.5rem;
+}
+
+/* CODE A::BEFORE EN A:HOVER::BEFORE VAN CHATGPT */
+main > a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: white;
+  z-index: -1;
+}
+
+main > a:hover::before {
+  transform: scale(1.03);
+}
+
+main > section:first-of-type,
+main > section:nth-of-type(3) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+main > section:first-of-type h2,
+main > section:nth-of-type(3) h2 {
+  margin: 4.8rem 0 0 0;
+}
+
+
+main > section:first-of-type img,
+main > section:nth-of-type(3) img {
+    width: 160px;
+    height: 45px;
+}
+
+main > section:nth-of-type(2) ul li a,
+main > section:nth-of-type(4) ul li a {
+  background-color: #B4B3AF;
+}
+
+/* Carousel container */
+main > section:nth-of-type(2),
+main > section:nth-of-type(4) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+
+
+/* Carousel */
+main > section:nth-of-type(2) ul,
+main > section:nth-of-type(4) ul {
+  display: flex;
+  gap: 1.3rem;
+  transition: transform 0.3s ease;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+main > section:nth-of-type(2) ul li,
+main > section:nth-of-type(4) ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 calc((100% / 2.2) - 0.5rem);
+}
+
+main > section:nth-of-type(2) ul li span,
+main > section:nth-of-type(4) ul li span {
+  display: block;
+  text-align: center;
+  margin-top: 0.5rem;
+  word-break: break-word;
+}
+
+main > section:nth-of-type(2) ul li:hover span:first-of-type,
+main > section:nth-of-type(4) ul li:hover span:first-of-type {
+  color: black;
+  background-color: white;
+}
+
+/* Carousel items */
+main > section:nth-of-type(2) ul li img,
+main > section:nth-of-type(4) ul li img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Carousel knoppen */
+main > section:nth-of-type(2) > button,
+main > section:nth-of-type(4) > button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+main > section:nth-of-type(2) > button svg,
+main > section:nth-of-type(4) > button svg {
+  color: white;
+  opacity: 50%;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.7));
+}
+
+main > section:nth-of-type(2) > button svg:hover,
+main > section:nth-of-type(4) > button svg:hover {
+  color: white;
+  opacity: 100%;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.7));
+}
+
+main > section:nth-of-type(2) > button:first-of-type,
+main > section:nth-of-type(4) > button:first-of-type {
+  left: 1.3rem;
+}
+
+main > section:nth-of-type(2) > button:last-of-type,
+main > section:nth-of-type(4) > button:last-of-type {
+  right: 1rem;
+}
+
+main > section:nth-of-type(2) > button svg,
+main > section:nth-of-type(4) > button svg {
+  width: 20px;
+  height: 28px;
+}
+
+
 
 .overlay {
   position: absolute;
@@ -88,7 +259,7 @@ h1 img {
 }
 
 h2 {
-  font-size: 3em;
+  font-size: 3.4rem;
   line-height: .75;
   font-weight: 400;
   text-align: center;
@@ -182,7 +353,7 @@ nav:nth-of-type(1) ul {
 }
 
 
-nav:nth-of-type(1) p {
+nav:nth-of-type(1) ul li:last-of-type {
   margin-top: auto;
   padding-left: 2rem;
   text-transform: none;
