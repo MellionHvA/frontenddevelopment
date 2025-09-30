@@ -1,5 +1,5 @@
-/* font face inzetten ipv google fonts */
-/* unscrollable maken wanneer je menu openklikt */
+/* font face inzetten ipv google fonts - DONE */
+/* unscrollable maken wanneer je menu openklikt - DONE */
 /* spans worden h3 en prijs word p */
 
 /**************/
@@ -37,22 +37,32 @@ body {
   background-color: var(--color-background);
   color: var(--color-text);
   text-transform: uppercase;
-  font-family: Segoe UI;
+  font-family: SegoeUI;
+}
+
+body a {
+  color: var(--color-text);
+}
+
+body[data-menu-open] {
+  overflow: hidden;
+  touch-action: none; 
 }
 
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 10rem;
+  padding-bottom: 3rem;
 }
 
 main > a {
+  font-size: 1.2rem;
   position: relative;
-  padding: 0.8rem 2rem;
+  padding: 0.7rem 2rem;
   color: black;
   text-decoration: none;
-  margin: 3rem auto;
+  margin: 3.1rem;
   text-align: center;
   z-index: 1;
 }
@@ -67,15 +77,20 @@ main > img:nth-of-type(5) {
   filter: invert(1);
 }
 
+main > img:nth-last-of-type(4),
 main > img:nth-last-of-type(3),
-main > img:nth-last-of-type(2),
-main > img:nth-last-of-type(1) {
-  width: 632px;
+main > img:nth-last-of-type(2) {
+  position: relative;
+  width: 100%;
+  max-width: 840px;
   margin: 1.5rem;
+  border: 5px solid rgb(37, 37, 37);
 }
 
+
+
 /* CODE A::BEFORE EN A:HOVER::BEFORE VAN CHATGPT */
-main > a::before {
+main > a:nth-of-type(1)::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -83,8 +98,26 @@ main > a::before {
   z-index: -1;
 }
 
-main > a:hover::before {
+main > a:nth-of-type(1):hover::before {
   transform: scale(1.03);
+}
+
+main > a:nth-of-type(2),
+main > a:nth-of-type(3),
+main > a:nth-of-type(4) {
+    font-size: 1.6rem;
+    color: var(--color-text);
+    margin-top: -2rem;
+    margin-left: auto;
+}
+
+
+
+main > a:nth-of-type(2):hover,
+main > a:nth-of-type(3):hover,
+main > a:nth-of-type(4):hover {
+  opacity: 80%;
+  transition: 0.3s ease-in-out;
 }
 
 main > section:first-of-type,
@@ -93,13 +126,18 @@ main > section:nth-of-type(3) {
   flex-direction: column;
   align-items: center;
   gap: 0.2rem;
+  margin-bottom: 0.7rem;
 }
 
-main > section:first-of-type h2,
-main > section:nth-of-type(3) h2 {
+
+
+main > section:first-of-type h2 {
   margin: 4.8rem 0 0 0;
 }
 
+main > section:nth-of-type(3) h2 {
+  margin: 1.7rem 0 0 0;
+}
 
 main > section:first-of-type img,
 main > section:nth-of-type(3) img {
@@ -261,7 +299,7 @@ h1 img {
 
 h2 {
   font-size: 3.4rem;
-  line-height: .75;
+  line-height: 0.75;
   font-weight: 400;
   text-align: center;
   text-wrap: balance;
@@ -438,6 +476,37 @@ display: block
   animation-delay: 0.75s !important;
 }
 
+footer {
+  text-transform: none;
+  text-align: center;
+  padding: 1.5em 1em;
+}
+
+footer img {
+  filter: invert(1);
+  max-width: 160px;
+  margin-bottom: 1.7em;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer li {
+  padding: 0.3rem;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer p {
+  font-size: 0.9rem;
+  margin: 0;
+  padding-top: 0.3rem;
+  padding-bottom: 1rem;
+}
 
 
 /* RESPONSIVE BIG SCREEN */
@@ -445,7 +514,7 @@ display: block
   header {
     display: grid;
     grid-template-columns: 1fr max-content 1fr;
-    grid-template-columns: 1fr max-content 1fr;
+    grid-template-rows: auto auto;
     height: 60px;
     padding: 0 2em;
   }
@@ -453,11 +522,21 @@ display: block
   nav:nth-of-type(1) {
   order: 1;
   grid-column:span 3;
+  position: static;
+  translate: 0;
+  width: 100%;
+  background: none;
+  grid-row: 2;
+  display: block;
   }
 
   nav:nth-of-type(1) ul {
-  display:flex;
-  justify-content: space-around;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  height: auto;
+  padding: 0;
+  margin: 0;
   }
 
   nav:nth-of-type(1) li:nth-of-type(6) {
@@ -498,3 +577,4 @@ nav a {
   font-size: 1.3rem;
 }
 }
+

@@ -4,14 +4,17 @@ const menuButton = document.querySelector("header button:nth-of-type(2)");
 const mainNav = document.querySelector("header nav:nth-of-type(1)");
 const overlay = document.querySelector(".overlay");
 
-// Toggle menu
+// Bron van scroll lock : https://developer.mozilla.org/en-US/docs/Web/API/Element/toggleAttribute
 menuButton.addEventListener("click", () => {
-  menuButton.toggleAttribute("data-open");
+  const isOpen = menuButton.toggleAttribute("data-open");
   mainNav.toggleAttribute("data-open");
   overlay.toggleAttribute("data-open");
+
+  // Scroll op slot zetten
+  document.body.toggleAttribute("data-menu-open", isOpen);
 });
 
-// Carousel functionality for all carousels
+// Carousel
 const carousels = document.querySelectorAll("main > section:nth-of-type(2), main > section:nth-of-type(4)");
 
 carousels.forEach((carousel) => {
@@ -28,7 +31,7 @@ carousels.forEach((carousel) => {
   });
 
   buttons[1].addEventListener("click", () => {
-    if (currentIndex < ul.children.length - 2) { // adjust for visible items
+    if (currentIndex < ul.children.length -2) { // adjust for visible items
       currentIndex++;
       ul.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
     }
