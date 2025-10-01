@@ -1,28 +1,56 @@
-// JavaScript Document
+// ==========================
+// ELEMENTS
+// ==========================
+const menuButton = document.querySelector("header button:nth-of-type(2)");       // Hamburger knop
+const mainNav = document.querySelector("header nav:nth-of-type(1)");             // Navigatie menu
+const searchButton = document.querySelector("header > button:nth-of-type(1)");   // Search knop header
+const searchBar = document.querySelector("header > section");                    // Search knop input
+const closeIcon = document.querySelector("header > section svg:nth-of-type(2)"); // Sluit svg search
+const overlay = document.querySelector(".overlay");                              // Full-page overlay
 
-const menuButton = document.querySelector("header button:nth-of-type(2)");
-const mainNav = document.querySelector("header nav:nth-of-type(1)");
-const overlay = document.querySelector(".overlay");
 
-// Bron van scroll lock : https://developer.mozilla.org/en-US/docs/Web/API/Element/toggleAttribute
+// Toggle
+function toggle(el, lock = true) {
+  const isOpen = el.toggleAttribute("data-open");
+  if (lock) overlay.toggleAttribute("data-open", isOpen);
+  document.body.toggleAttribute("data-menu-open", isOpen); // Scroll op slot
+  return isOpen;
+}
+
+// Hamburger menu
 menuButton.addEventListener("click", () => {
-  const isOpen = menuButton.toggleAttribute("data-open");
-  mainNav.toggleAttribute("data-open");
-  overlay.toggleAttribute("data-open");
+  toggle(menuButton);
+  toggle(mainNav, false);
+});
 
-  // Scroll op slot zetten
-  document.body.toggleAttribute("data-menu-open", isOpen);
+// Search bar
+searchButton.addEventListener("click", () => toggle(searchBar));
+
+closeIcon.addEventListener("click", () => {
+  searchBar.removeAttribute("data-open"); 
+  overlay.removeAttribute("data-open"); 
+  document.body.removeAttribute("data-menu-open");
+});
+
+// Klik om overlay te sluiten
+overlay.addEventListener("click", () => {
+  menuButton.removeAttribute("data-open"); 
+  mainNav.removeAttribute("data-open"); 
+  searchBar.removeAttribute("data-open"); 
+  overlay.removeAttribute("data-open"); 
+  document.body.removeAttribute("data-menu-open");
 });
 
 // Carousel
 const carousels = document.querySelectorAll("main > section:nth-of-type(2), main > section:nth-of-type(4)");
 
-carousels.forEach((carousel) => {
+carousels.forEach(carousel => {
   const ul = carousel.querySelector("ul");
   const buttons = carousel.querySelectorAll("button");
   let currentIndex = 0;
-  const itemWidth = ul.querySelector("li").offsetWidth + 16; // 16px gap
+  const itemWidth = ul.querySelector("li").offsetWidth + 16;
 
+  // Knop links
   buttons[0].addEventListener("click", () => {
     if (currentIndex > 0) {
       currentIndex--;
@@ -30,14 +58,11 @@ carousels.forEach((carousel) => {
     }
   });
 
+  // Knop rechts
   buttons[1].addEventListener("click", () => {
-    if (currentIndex < ul.children.length -2) { // adjust for visible items
+    if (currentIndex < ul.children.length - 2) {
       currentIndex++;
       ul.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
     }
   });
 });
-
-
-
-// class toevoegen op body, en op overflow hidden zetten om lock op slot te zetten 

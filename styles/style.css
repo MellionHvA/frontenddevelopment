@@ -1,7 +1,3 @@
-/* font face inzetten ipv google fonts - DONE */
-/* unscrollable maken wanneer je menu openklikt - DONE */
-/* spans worden h3 en prijs word p */
-
 /**************/
 /* CSS REMEDY */
 /**************/
@@ -10,8 +6,8 @@
 }
 
 
-
-
+/* DONT FORGET DARK MODE LIGHT MODE */
+/* VAR GEBRUIKEN OVERAL */
 
 
 
@@ -21,10 +17,10 @@
 :root {
 	--color-text:white;
 	--color-background: black;
+  --color-carousel: #B4B3AF;
   --icon-size: 28px;
   --icon-stroke: 2;
 }
-
 
 
 
@@ -49,6 +45,8 @@ body[data-menu-open] {
   touch-action: none; 
 }
 
+
+
 main {
   display: flex;
   flex-direction: column;
@@ -56,17 +54,7 @@ main {
   padding-bottom: 3rem;
 }
 
-main > a {
-  font-size: 1.2rem;
-  position: relative;
-  padding: 0.7rem 2rem;
-  color: black;
-  text-decoration: none;
-  margin: 3.1rem;
-  text-align: center;
-  z-index: 1;
-}
-
+/* Dividers */
 main > img:nth-of-type(1),
 main > img:nth-of-type(5) {
   width: 50%;
@@ -77,19 +65,19 @@ main > img:nth-of-type(5) {
   filter: invert(1);
 }
 
-main > img:nth-last-of-type(4),
-main > img:nth-last-of-type(3),
-main > img:nth-last-of-type(2) {
+/* View All Button onder carousel */
+main > a {
+  font-size: 1.2rem;
   position: relative;
-  width: 100%;
-  max-width: 840px;
-  margin: 1.5rem;
-  border: 5px solid rgb(37, 37, 37);
+  padding: 0.7rem 2rem;
+  color: var(--color-background);
+  text-decoration: none;
+  margin: 3.1rem;
+  text-align: center;
+  z-index: 1;
 }
 
-
-
-/* CODE A::BEFORE EN A:HOVER::BEFORE VAN CHATGPT */
+/* CODE A::BEFORE EN A:HOVER::BEFORE MET BEHULP VAN CHATGPT */
 main > a:nth-of-type(1)::before {
   content: "";
   position: absolute;
@@ -102,22 +90,52 @@ main > a:nth-of-type(1):hover::before {
   transform: scale(1.03);
 }
 
+/* Images */
+main > img:nth-last-of-type(4),
+main > img:nth-last-of-type(3),
+main > img:nth-last-of-type(2) {
+  position: relative;
+  width: 100%;
+  max-width: 840px;
+  margin: 1.5rem auto; /* center the images */
+  border: 5px solid rgb(37, 37, 37);
+  display: block;
+}
+
+/* Links onder img */
 main > a:nth-of-type(2),
 main > a:nth-of-type(3),
 main > a:nth-of-type(4) {
-    font-size: 1.6rem;
-    color: var(--color-text);
-    margin-top: -2rem;
-    margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.6rem;
+  color: var(--color-text);
+  margin-top: -2rem;
+  width: 100%;
+  max-width: 840px;
+  margin-left: 7rem;
 }
 
+main > a:nth-of-type(2) svg,
+main > a:nth-of-type(3) svg,
+main > a:nth-of-type(4) svg {
+  width: 1rem;
+  transition: transform 0.3s ease-in-out;
+}
 
-
+/* Hover effects */
 main > a:nth-of-type(2):hover,
 main > a:nth-of-type(3):hover,
 main > a:nth-of-type(4):hover {
-  opacity: 80%;
-  transition: 0.3s ease-in-out;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+main > a:nth-of-type(2):hover svg,
+main > a:nth-of-type(3):hover svg,
+main > a:nth-of-type(4):hover svg {
+  transform: scale(1.3);
 }
 
 main > section:first-of-type,
@@ -147,7 +165,7 @@ main > section:nth-of-type(3) img {
 
 main > section:nth-of-type(2) ul li a,
 main > section:nth-of-type(4) ul li a {
-  background-color: #B4B3AF;
+  background-color: var(--color-carousel);
 }
 
 /* Carousel container */
@@ -183,18 +201,27 @@ main > section:nth-of-type(4) ul li {
   flex: 0 0 calc((100% / 2.2) - 0.5rem);
 }
 
-main > section:nth-of-type(2) ul li span,
-main > section:nth-of-type(4) ul li span {
+main > section:nth-of-type(2) ul li h3,
+main > section:nth-of-type(4) ul li h3 {
   display: block;
   text-align: center;
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
+  margin-bottom: 1.5rem;
+  max-width: 80%;
   word-break: break-word;
+  font-weight: 100;
+  font-size: 1.1em;
 }
 
-main > section:nth-of-type(2) ul li:hover span:first-of-type,
-main > section:nth-of-type(4) ul li:hover span:first-of-type {
-  color: black;
-  background-color: white;
+main > section:nth-of-type(2) ul li p,
+main > section:nth-of-type(4) ul li p {
+  margin-top: -1rem;
+}
+
+main > section:nth-of-type(2) ul li:hover h3:first-of-type,
+main > section:nth-of-type(4) ul li:hover h3:first-of-type {
+  color: var(--color-background);
+  background-color: var(--color-text);
 }
 
 /* Carousel items */
@@ -248,7 +275,7 @@ main > section:nth-of-type(4) > button svg {
 }
 
 
-
+/* Wit blok wanneer je een menu opent */
 .overlay {
   position: absolute;
   left: 0;
@@ -258,6 +285,7 @@ main > section:nth-of-type(4) > button svg {
   background-color: white;
   opacity: 0.5;
   display: none;
+  z-index: 998;
 }
 
 .overlay[data-open]{
@@ -275,11 +303,80 @@ header {
   margin: 0 auto;
 }
 
-li {
-  list-style: none;
+/* Container waar de input in zit */
+header > section {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-background);
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+  padding: 0.16rem 0;
+  z-index: 9999;
+  gap: 0.6rem;
+}
+
+/* Opent search balk */
+header > section[data-open] {
+  transform: translateY(0);
+}
+
+/* Styling van de input */
+header > section > input {
+  flex: 1;
+  max-width: 830px;
+  padding: 0.9rem;
+  margin-top: 0.2rem;
+  margin-left: 2.3rem;
+  border: 1px solid var(--color-text);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-size: 1rem;
+}
+
+/* Text kleur van input */
+header > section > input::placeholder {
+  color: var(--color-text);
+}
+
+/* Styling van sluitknop in search */
+header > section > svg {
+  cursor: pointer;
+  width: 17px;
+  height: 17px;
+  margin-left: 0.8rem;
+  transition: transform 0.2s ease;
+}
+
+header > section > svg:hover {
+  transform: scale(1.1);
+}
+
+header > section > svg:nth-of-type(1) {
+  position: absolute;
+  right: 5.2rem;
+}
+
+header > section > input:focus {
+  outline: none;
+  border: 2px solid var(--color-text);
+  border-radius: 0;
+}
+
+header > section > input:hover {
+  outline: none;
+  border: 2px solid var(--color-text);
+  border-radius: 0;
 }
 
 
+
+li {
+  list-style: none;
+}
 
 svg {
   width: var(--icon-size);
@@ -293,7 +390,7 @@ h1 {
 
 h1 img {
   display: block;
-  margin-left: 2.47em;
+  margin-left: 4rem;
   width: clamp( 5em, 45.6vw, 24.25em);
 }
 
@@ -306,7 +403,7 @@ h2 {
 }
 
 nav a {
-  color: white;
+  color: var(--color-text);
   font-size: 1.2rem;
   text-decoration: none;
   font-weight: 400;
@@ -365,8 +462,6 @@ nav:nth-of-type(1) ul li a {
   padding: 12px 20px 12px 2rem;
 }
 
-
-
 /* Menu Algemeen */
 nav:nth-of-type(1) {
   position: fixed;
@@ -381,6 +476,9 @@ nav:nth-of-type(1) {
   z-index: 999;
 }
 
+nav:nth-of-type(1) a svg {
+  display: none;
+}
 
 nav:nth-of-type(1) ul {
   display: flex;
@@ -513,10 +611,80 @@ footer p {
 @media ( width > 61.9em) {
   header {
     display: grid;
-    grid-template-columns: 1fr max-content 1fr;
-    grid-template-rows: auto auto;
-    height: 60px;
-    padding: 0 2em;
+    grid-template-columns: max-content auto max-content;
+    align-items: center;
+    column-gap: 5rem;
+  }
+
+  nav:nth-of-type(1) ul li a svg {
+    display: inline-block;
+  }
+
+  header h1 {
+    display: block;
+    margin: auto;
+    margin-left: -1.8rem;
+  }
+
+  main > section:nth-of-type(2) {
+    justify-content: center; /* center the whole grid container */
+    padding-left: 0;
+  }
+
+  main > section:nth-of-type(2) ul {
+    display: grid;
+    grid-template-columns: repeat(3, 30rem); /* fixed width columns */
+    gap: 1.5rem; /* less space between items */
+    justify-content: center; /* center the grid itself */
+  }
+
+  main > section:nth-of-type(2) ul li h3,
+  main > section:nth-of-type(4) ul li h3 {
+    width: 70%;
+  }
+
+  main > section:nth-of-type(2) ul li {
+    flex: none;
+    width: 100%;
+  }
+
+  main > section:nth-of-type(2) > button {
+    display: none;
+  }
+  
+
+  main > section:first-of-type,
+  main > section:nth-of-type(3) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+    margin-bottom: 0.7rem;
+  }
+
+  header nav:nth-of-type(1) a svg {
+  width: 0.8rem;
+  vertical-align: bottom;
+  stroke-width: 0.2rem;
+}
+
+  button:nth-of-type(1) {
+    margin-left: -0.7rem;
+  }
+
+  nav:nth-of-type(2) {
+    margin-right: -0.75rem;
+  }
+
+
+
+  nav:nth-of-type(1) ul li a {
+    display: block;
+    padding: 0;
+  }
+
+  #Umbrella {
+    margin-top: 4rem;
   }
   
   nav:nth-of-type(1) {
@@ -532,7 +700,7 @@ footer p {
 
   nav:nth-of-type(1) ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: row;
   height: auto;
   padding: 0;
@@ -542,10 +710,6 @@ footer p {
   nav:nth-of-type(1) li:nth-of-type(6) {
   display: none;
   }
-
-  .overlay[data-open]{
-  display: none;
-}
 
   nav:nth-of-type(1)[data-open]{
     display: none;
@@ -565,12 +729,6 @@ button:nth-of-type(1) {
   color:  white;
   border: none;
   order:-1;
-}
-
-/* Service menu */
-h1 img {
-  justify-items: center;
-  margin: auto;
 }
 
 nav a {
