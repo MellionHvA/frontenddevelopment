@@ -1,6 +1,3 @@
-// ==========================
-// ELEMENTS
-// ==========================
 const menuButton = document.querySelector("header button:nth-of-type(2)");       // Hamburger knop
 const mainNav = document.querySelector("header nav:nth-of-type(1)");             // Navigatie menu
 const searchButton = document.querySelector("header > button:nth-of-type(1)");   // Search knop header
@@ -42,7 +39,7 @@ overlay.addEventListener("click", () => {
 });
 
 // Carousel
-const carousels = document.querySelectorAll("main > section:nth-of-type(2), main > section:nth-of-type(4)");
+const carousels = document.querySelectorAll("main > section:nth-of-type(2), main > section:nth-of-type(5)");
 
 carousels.forEach(carousel => {
   const ul = carousel.querySelector("ul");
@@ -64,5 +61,7 @@ carousels.forEach(carousel => {
       currentIndex++;
       ul.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
     }
+
+    
   });
 });
