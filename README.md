@@ -145,8 +145,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 <details>
   <summary>uitwerken na test in 9<sup>e</sup> werkgroep</summary>
 
-  ### Bevindingen
-  Lijst met je bevindingen die in de test naar voren kwamen (geef ook aan wat er verbeterd is):
+    <img src="readme-images/FED 25-26 - Blok 1 - WCAG checklist_page-0001.jpg" width="375px" alt="WCAG">
+    <img src="readme-images/FED 25-26 - Blok 1 - WCAG checklist_page-0002.jpg" width="375px" alt="WCAG">
+    <img src="readme-images/FED 25-26 - Blok 1 - WCAG checklist_page-0003.jpg" width="375px" alt="WCAG">
+    <img src="readme-images/FED 25-26 - Blok 1 - WCAG checklist_page-0004.jpg" width="375px" alt="WCAG">
+    <img src="readme-images/FED 25-26 - Blok 1 - WCAG checklist_page-0005.jpg" width="375px" alt="WCAG">
 
 </details>
 
