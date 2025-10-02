@@ -15,6 +15,51 @@
   --color-carousel: #B4B3AF;
   --icon-size: 28px;
   --icon-stroke: 2;
+  --hover-background: #0e0e0e;
+  --border-color: #252525;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-text: black;
+    --color-background: #a1a1a1;
+    --color-carousel: #B4B3AF;
+    --icon-size: 28px;
+    --icon-stroke: 2;
+    --hover-background: #0e0e0e;
+    --border-color: #252525;
+  }
+
+  h1 img {
+    filter: invert(1);
+  }
+
+  #Umbrella {
+    filter: invert(1);
+  }
+
+    main > img:nth-of-type(1),
+  main > img:nth-of-type(2) {
+    filter: invert(1);
+  }
+
+  main > img:nth-of-type(1),
+  main > img:nth-of-type(2) {
+    filter: none !important;
+  }
+
+  main > section:first-of-type,
+  main > section:nth-of-type(4), h2 {
+    filter: invert(1);
+  }
+
+  footer img {
+    filter: none !important;
+  }
+
+  nav:nth-of-type(1) ul li a:hover {
+    background-color: white !important;
+  }
 }
 
 /* Body */
@@ -44,7 +89,7 @@ svg {
 
 /* Header */
 header {
-  background-color: black;
+  background-color: var(--color-background);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -124,6 +169,10 @@ h1 img {
   width: clamp(5em, 45.6vw, 24.25em);
 }
 
+section h4 {
+  display: none;
+}
+
 /* Nav bar */
 nav a {
   color: var(--color-text);
@@ -141,7 +190,7 @@ nav:nth-of-type(1) {
   right: 0;
   bottom: 0;
   width: 53%;
-  background-color: black;
+  background-color: var(--color-background);
   translate: -100%;
   transition: translate 0.7s ease;
   z-index: 999;
@@ -171,7 +220,7 @@ nav:nth-of-type(1) ul li a {
 }
 
 nav:nth-of-type(1) ul li a:hover {
-  background-color: #0e0e0e;
+  background-color: var(--hover-background);
 }
 
 nav:nth-of-type(1) ul li:last-of-type {
@@ -186,7 +235,7 @@ nav:nth-of-type(1) a svg {
 }
 
 nav:nth-of-type(1) a:hover {
-  background-color: #1d1d1d;
+  background-color: var(--hover-background);
 }
 
 nav:nth-of-type(1) p:hover {
@@ -211,7 +260,7 @@ nav:nth-of-type(2) ul {
 /* Search knop */
 button:nth-of-type(1) {
   background-color: transparent;
-  color: white;
+  color: var(--color-text);
   border: none;
   order: 1;
   cursor: pointer;
@@ -234,7 +283,7 @@ button:nth-of-type(2) span {
   display: block;
   width: 26px;
   height: 2px;
-  background: white;
+  background: var(--color-text);
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -261,7 +310,7 @@ li {
   top: 3.2rem;
   width: 100%;
   height: 100vh;
-  background-color: white;
+  background-color: var(--color-text);
   opacity: 0.5;
   display: none;
   z-index: 998;
@@ -348,7 +397,7 @@ footer p {
     margin-left: -0.7rem;
     order: -1;
     background-color: transparent;
-    color: white;
+    color: var(--color-text);
     border: none;
   }
 

@@ -1,0 +1,102 @@
+/* Main section */
+main section:first-of-type {
+  max-width: 40rem;
+  margin-inline: auto;
+  padding-top: 2rem;
+  position: relative;
+}
+
+/* Main image */
+main section:first-of-type img:first-of-type {
+  width: 96%;
+  max-width: 40rem;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  background-color: var(--color-carousel);
+}
+
+main section p,
+main section h4,
+main section ul,
+main section li,
+main section button {
+  max-width: 96%;
+  margin: 0.5rem 0 0 2%;
+  text-align: left;
+  display: block;
+}
+
+main h4 {
+  padding: 1.5rem 0 0.5rem 0;
+  text-transform: none;
+}
+
+main section ul {
+ text-transform: none;
+ margin: 0.5rem 0;
+}
+
+main section h2 {
+  max-width: 70%;
+  font-size: 2.5rem; 
+  line-height: 0.75; 
+  font-weight: 400;
+  margin: 1rem 0 0 2%;
+  text-align: left;
+  display: block;
+}
+
+/* Barcode */
+main section img:nth-of-type(2) {
+  width: 160px;
+  height: 45px;
+  display: block;
+  margin-top: 0.5rem;
+  margin-left: 2%;
+}
+
+
+main section p {
+  padding: 0.5rem;
+  padding-left: 0;
+  text-transform: none;
+}
+
+main section p:nth-of-type(3),
+main section p:nth-of-type(4) {
+    font-size: 0.8rem;
+}
+
+main section p:nth-of-type(4) {
+    padding-bottom: 0;
+}
+
+/* Teller */
+main section p:has(> button) {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  border: 1px solid var(--color-text);
+  padding: 0.5rem 1rem;
+}
+
+main svg {
+  color: var(--color-text);
+  width: 1rem;
+  height: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+/* PRE-ORDER NOW knop */
+main section > button:last-of-type {
+  font-size: 1rem;
+  display: inline-block;
+  width: 100%;
+  max-width: 30rem;
+  padding: 1.1rem 0;
+  border: 1px solid var(--color-text);
+  background: none;
+  color: var(--color-text);
+  text-align: center;
+}
