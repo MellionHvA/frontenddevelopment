@@ -1,0 +1,386 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 3rem;
+}
+
+/* Dividers */
+main > img:nth-of-type(1),
+main > img:nth-of-type(2) {
+  width: 50%;
+  max-width: 100px;
+  height: auto;
+  display: block;
+  margin-inline: auto;
+  filter: invert(1);
+}
+
+/* View all knop */
+main > a {
+  font-size: 1.2rem;
+  position: relative;
+  padding: 0.7rem 2rem;
+  color: var(--color-background);
+  text-decoration: none;
+  margin: 3.1rem;
+  text-align: center;
+  z-index: 1;
+}
+
+main > a:nth-of-type(1)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: white;
+  z-index: -1;
+}
+
+main > a:nth-of-type(1):hover::before {
+  transform: scale(1.03);
+}
+
+/* Merch, music, accessoires */
+main > section:nth-of-type(3) img {
+  width: 49rem;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border: 5px solid rgb(37, 37, 37);
+  margin-top: 2rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+main > section:nth-of-type(3) img:hover {
+  transform: scale(1.01);
+}
+
+/* Links van merch, music, accesoires */
+main > section:nth-of-type(3) a {
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.7rem;
+  color: var(--color-text);
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+main > section:nth-of-type(3) a svg {
+  width: 1rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+main > section:nth-of-type(3) a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+main > section:nth-of-type(3) a:hover svg {
+  transform: scale(1.3);
+}
+
+/* Barcodes */
+main > section:first-of-type,
+main > section:nth-of-type(4) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  margin-bottom: 0.7rem;
+}
+
+main > section:first-of-type h2 {
+  margin: 4.8rem 0 0 0;
+}
+
+main > section:nth-of-type(4) h2 {
+  margin: 1.7rem 0 0 0;
+}
+
+main > section:first-of-type img,
+main > section:nth-of-type(4) img {
+  width: 160px;
+  height: 45px;
+}
+
+/* Carousel achtergrond */
+main > section:nth-of-type(2) ul li a,
+main > section:nth-of-type(5) ul li a {
+  background-color: var(--color-carousel);
+}
+
+/* Carousel */
+main > section:nth-of-type(2),
+main > section:nth-of-type(5) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+
+main > section:nth-of-type(2) ul,
+main > section:nth-of-type(5) ul {
+  display: flex;
+  gap: 1.3rem;
+  transition: transform 0.3s ease;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+main > section:nth-of-type(2) ul li,
+main > section:nth-of-type(5) ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 calc((100% / 2.2) - 0.5rem);
+}
+
+main > section:nth-of-type(2) ul li h3,
+main > section:nth-of-type(5) ul li h3 {
+  display: block;
+  text-align: center;
+  margin-top: 0.8rem;
+  margin-bottom: 1.5rem;
+  max-width: 80%;
+  word-break: break-word;
+  font-weight: 100;
+  font-size: 1.1em;
+}
+
+main > section:nth-of-type(2) ul li p,
+main > section:nth-of-type(5) ul li p {
+  margin-top: -1rem;
+}
+
+main > section:nth-of-type(2) ul li:hover h3:first-of-type,
+main > section:nth-of-type(5) ul li:hover h3:first-of-type {
+  color: var(--color-background);
+  background-color: var(--color-text);
+}
+
+main > section:nth-of-type(2) ul li img,
+main > section:nth-of-type(5) ul li img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Knoppen carousel */
+main > section:nth-of-type(2) button,
+main > section:nth-of-type(5) button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+main > section:nth-of-type(2) > button svg,
+main > section:nth-of-type(5) > button svg {
+  color: white;
+  opacity: 50%;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.7));
+  width: 20px;
+  height: 28px;
+}
+
+main > section:nth-of-type(2) > button svg:hover,
+main > section:nth-of-type(5) > button svg:hover {
+  opacity: 100%;
+}
+
+main > section:nth-of-type(2) > button:first-of-type,
+main > section:nth-of-type(5) > button:first-of-type {
+  left: 1.3rem;
+}
+
+main > section:nth-of-type(2) > button:last-of-type,
+main > section:nth-of-type(5) > button:last-of-type {
+  right: 1rem;
+}
+
+/* Headings */
+h2 {
+  font-size: 3.4rem;
+  line-height: 0.75;
+  font-weight: 400;
+  text-align: center;
+  text-wrap: balance;
+}
+
+/* Animatie Umbrella */
+@keyframes fall {
+  0% { transform: translateY(0); opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateY(100px); opacity: 0; }
+}
+
+#Umbrella {
+  padding-top: 1.5em;
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+#Raindrops path {
+  animation: fall 2.5s ease-in infinite;
+}
+
+.drop-one { animation-delay: 0s; }
+.drop-two { animation-delay: 0.5s !important; }
+.drop-three { animation-delay: 0s !important; }
+.drop-four { animation-delay: 0.75s !important; }
+
+/* Media query naar desktop */
+@media (width > 61.9em) {
+
+  /* Barcode */
+  main > section:first-of-type,
+  main > section:nth-of-type(4) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+    margin-bottom: 0.7rem;
+  }
+
+  /* Merch, Music, Accessories */
+  main > section:nth-of-type(3) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+  }
+
+  main > section:nth-of-type(3) img:nth-of-type(1) { grid-column: 1; grid-row: 1; }
+  main > section:nth-of-type(3) img:nth-of-type(2) { grid-column: 2; grid-row: 1; }
+  main > section:nth-of-type(3) img:nth-of-type(3) { grid-column: 3; grid-row: 1; }
+
+  main > section:nth-of-type(3) a:nth-of-type(1) { grid-column: 1; grid-row: 2; text-align: right; }
+  main > section:nth-of-type(3) a:nth-of-type(2) { grid-column: 2; grid-row: 2; text-align: right; }
+  main > section:nth-of-type(3) a:nth-of-type(3) { grid-column: 3; grid-row: 2; text-align: right; }
+
+  main > section:nth-of-type(3) img {
+    width: 100%;
+    max-width: 30rem;
+    margin-top: 2rem;
+  }
+
+  main > section:nth-of-type(3) a {
+    font-size: 1.6rem;
+  }
+
+  /* Carousel 1 */
+  main > section:nth-of-type(2) {
+    justify-content: center;
+    padding-left: 0;
+  }
+
+  main > section:nth-of-type(2) ul {
+    display: grid;
+    grid-template-columns: repeat(3, 25%);
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  main > section:nth-of-type(2) ul li {
+    flex: none;
+    width: 100%;
+  }
+
+  main > section:nth-of-type(2) ul li:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+  }
+
+  main > section:nth-of-type(2) ul li h3,
+  main > section:nth-of-type(5) ul li h3 {
+    width: 70%;
+  }
+
+  main > section:nth-of-type(2) > button {
+    display: none;
+  }
+
+  /* Carousel 2 */
+  main > section:nth-of-type(5) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+    margin: 0 auto;
+    padding-left: 1rem;
+    position: relative;
+    justify-content: flex-start;
+    max-width: 100%;
+  }
+
+  main > section:nth-of-type(5) ul {
+    display: flex;
+    gap: 1rem;
+  }
+
+  main > section:nth-of-type(5) ul li {
+    flex: 0 0 calc((100% / 3.5) - 0.8rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  main > section:nth-of-type(5) ul li img {
+    width: 100%;
+    height: auto;
+    border: 3px solid rgb(37, 37, 37);
+  }
+
+  main > section:nth-of-type(5) ul li img:hover {
+    transform: scale(1.02);
+  }
+
+  main > section:nth-of-type(5) ul li h3 {
+    font-size: 1.1rem;
+    margin: 0.5rem 0 1rem 0;
+  }
+
+  main > section:nth-of-type(5) ul li p {
+    font-size: 0.95rem;
+    margin-top: -0.5rem;
+  }
+
+  main > section:nth-of-type(5) > button {
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+  }
+
+  main > section:nth-of-type(5) > button[aria-label="Back"] { 
+    left: 0.5rem; 
+  }
+
+  main > section:nth-of-type(5) > button[aria-label="Next"] { 
+    right: 0.5rem; 
+  }
+
+  main > section:nth-of-type(3) {
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    gap: 1.2rem;
+    padding: 0 1rem;
+  }
+
+  #Umbrella {
+    margin-top: 4rem;
+  }
+}
