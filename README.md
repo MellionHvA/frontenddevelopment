@@ -164,26 +164,22 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor 3<sup>e</sup> voortgang</summary>
 
   ### Stand van zaken
-  hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
+  Dark mode alleen nog toevoegen, tweede pagina maken en eerste pagina nog de helft responsive maken.
 
 
   ### Agenda voor meeting
   samen met je groepje opstellen
 
-  | student 1      | student 2          | student 3    | student 4        |
-  | ---            | ---                | ---          | ---              |
-  | dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-  | en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-  | ...            | ...                | ...          | ...              |
+  Eva: Html css goed?
+  Melih: Beste manier van responsive maken?
+  Demi: Responsive maken
 
 
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - Niet veel uitgehaald qua feedback, ik was goed op weg kreeg ik te horen
+  - Section mist nog wel header
 
 </details>
 
@@ -201,15 +197,15 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   ### Dit ging goed/Heb ik geleerd: 
-  Korte omschrijving met plaatjes
+  Geleerd hoe je nth-of-type etc. heb gebruikt. Vond het heel lastig in het begin maar het is me uiteindelijk gelukt en ik kan het nu zonder problemen gebruiken. Dus ik zit niet meer aan divs of classes vast voor in de toekomst!
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="top">
+  
 
 
   ### Dit was lastig/Is niet gelukt:
-  Korte omschrijving met plaatjes
+  Het lastige gedeelte was de quantity op mijn tweede pagina. Met js kreeg ik het niet te werken, en helaas had ik niet veel tijd meer dus haalde ik het niet.
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="bummer">
+  
 </details>
 
 
@@ -225,8 +221,9 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Nb. ChatGpT en andere AI horen er ook bij.
   Nb. Vermeld de bronnen ook in je code.
 
-  1. bron 1
-  2. bron 2
-  3. ...
+  1. Codepen
+  2. Sanne & Bahaa
+  3. Shop.bmthofficial.com
+  4. ChatGPT (vooral als iets helemaal niet lukte / troubleshooting)
 
 </details>
