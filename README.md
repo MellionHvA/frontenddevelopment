@@ -59,6 +59,9 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   ### Bevindingen
   Lijst met je bevindingen die in de test naar voren kwamen:
+  - Geen alt teksten
+  - Geen light mode (site is al donker)
+  
 
 </details>
 
@@ -71,7 +74,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   Link naar mijn breakdown schets:
   https://www.figma.com/design/zKko9KrDx9agR3msY1vCYm/Untitled?node-id=1-2&t=DcGmd728p6sILTlv-1
-
+  
 </details>
 
 
@@ -86,9 +89,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Stand van zaken
   hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
 
-
-  ### Agenda voor meeting
-  samen met je groepje opstellen
+  - Wat ging goed: Ik had een goede start, snelle begin met mijn header en kon meteen naar de hamburger menu
+  - Wat was lastig: De header had ik eerst anders gedaan, dus ik moest weer opnieuw beginnen van 0 om het beter te maken wat wel tijd en moeite kostte
 
   Bespreken met groepje:
   HTML bekijken, carousel met pijltjes, video embed, site op de beste manier responsive maken, hoe een kaart op een website bruikbaar maken
@@ -97,11 +99,13 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - Geen google kaarten gebruiken maar open source
+  - 3 Style sheets inleveren, algemeen, pagina 1, pagina 2
+  - Font face moet je gebruiken, geen google fonts
+  - Svg's kan je pakken van een site door via element inspect te kopieren
+  - Aria-hidden tag leest de screenreader niet
 
+    
 </details>
 
 
@@ -116,10 +120,6 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Stand van zaken
   Ik heb kunnen werken aan mijn header, ook geleerd hoe ik het op een betere manier kon doen wat mijn uiteindelijk veel tijd zou besparen (2 navs gebruiken i.p.v. 1). Ik was ook eerst begonnen met big screen en niet mobile first dus opnieuw      beginnen was het beste optie, ik ben van plan om z.s.m aan de hamburger menu te werken.
 
-
-  ### Agenda voor meeting
-  samen met je groepje opstellen
-
   Vragen per leerling:
   Melih: Html check & hoe je je site responsive maakt 
   Eva: Video van een site pakken en zelf gebruiken
@@ -131,10 +131,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-- ...
+  - Sections moeten een header hebben
+  - Letten op toegankelijkheid
 
 </details>
 
