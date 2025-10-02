@@ -27,9 +27,15 @@ main section button {
   display: block;
 }
 
-main h4 {
+main section:nth-of-type(1) h4 {
   padding: 1.5rem 0 0.5rem 0;
   text-transform: none;
+}
+
+main section:nth-of-type(2) h4 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 3rem;
 }
 
 main section ul {
@@ -99,4 +105,55 @@ main section > button:last-of-type {
   background: none;
   color: var(--color-text);
   text-align: center;
+}
+
+/* Second section grid */
+main section:nth-of-type(2) ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 1rem;                             /* space between items */
+  list-style: none;                      /* remove default bullets */
+  padding: 0;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+main section:nth-of-type(2) li p:first-of-type:hover {
+    color: var(--color-background);
+    background-color: var(--color-text);
+}
+
+main section:nth-of-type(2) li img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background-color: var(--color-grid);
+}
+
+main section:nth-of-type(2) li p {
+  text-transform: uppercase;
+  margin: 0.3rem 0;
+  text-align: center;
+}
+
+
+@media (width > 61.9em) {
+  main > section:first-of-type {
+    display: grid;
+    grid-template-columns: 40rem 1fr;
+    gap: 2rem;
+    align-items: start;
+    max-width: calc(100% - 4rem);
+    margin-inline: auto;
+    padding-top: 5.3rem;
+  }
+
+  /* Afbeelding product */
+  main > section:first-of-type > :first-child {
+    grid-column: 1;
+    grid-row: 1 / span 10; /* covers left column fully */
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 }

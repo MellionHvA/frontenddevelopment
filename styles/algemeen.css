@@ -13,6 +13,7 @@
   --color-text: white;
   --color-background: black;
   --color-carousel: #B4B3AF;
+  --color-grid: #2c2c2c;
   --icon-size: 28px;
   --icon-stroke: 2;
   --hover-background: #0e0e0e;
@@ -24,6 +25,7 @@
     --color-text: black;
     --color-background: #a1a1a1;
     --color-carousel: #B4B3AF;
+    --color-grid: #2c2c2c;
     --icon-size: 28px;
     --icon-stroke: 2;
     --hover-background: #0e0e0e;
